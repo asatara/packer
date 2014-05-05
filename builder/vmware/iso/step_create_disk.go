@@ -23,6 +23,7 @@ func (stepCreateDisk) Run(state multistep.StateBag) multistep.StepAction {
 	config := state.Get("config").(*config)
 	driver := state.Get("driver").(vmwcommon.Driver)
 	ui := state.Get("ui").(packer.Ui)
+	full_disk_paths := state.Get("full_disk_paths").([]string)
 
 	ui.Say("Creating virtual machine disk")
 	full_disk_path := filepath.Join(config.OutputDir, config.DiskName+".vmdk")
@@ -33,7 +34,8 @@ func (stepCreateDisk) Run(state multistep.StateBag) multistep.StepAction {
 		return multistep.ActionHalt
 	}
 
-	state.Put("full_disk_path", full_disk_path)
+	full_disk_paths = append(full_disk_paths, full_disk_path)
+	+state.Put("full_disk_paths", full_disk_paths)
 
 	return multistep.ActionContinue
 }
