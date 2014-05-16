@@ -35,7 +35,7 @@ func (stepCreateDisk) Run(state multistep.StateBag) multistep.StepAction {
 	}
 
 	full_disk_paths = append(full_disk_paths, full_disk_path)
-	+state.Put("full_disk_paths", full_disk_paths)
+	state.Put("full_disk_paths", full_disk_paths)
 
 	return multistep.ActionContinue
 }
