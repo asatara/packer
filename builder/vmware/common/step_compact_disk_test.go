@@ -14,7 +14,7 @@ func TestStepCompactDisk(t *testing.T) {
 	state := testState(t)
 	step := new(StepCompactDisk)
 
-	full_disk_paths := make([]string, 0))
+	full_disk_paths := make([]string, 0)
 	full_disk_paths = append(full_disk_paths, "foo", "bar");
 	state.Put("full_disk_paths", full_disk_paths)
 
@@ -42,7 +42,7 @@ func TestStepCompactDisk_skip(t *testing.T) {
 	step := new(StepCompactDisk)
 	step.Skip = true
 
-	full_disk_paths := make([]string, 0))
+	full_disk_paths := make([]string, 0)
 	full_disk_paths = append(full_disk_paths, "foo", "bar");
 	state.Put("full_disk_paths", full_disk_paths)
 
