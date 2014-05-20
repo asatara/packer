@@ -1,10 +1,22 @@
 ## 0.6.1 (unreleased)
 
+IMPROVEMENTS:
+
+  * builder/ansible: Add `playbook_dir` option. [GH-1000]
+  * builder/openstack: Skip certificate verification. [GH-1121]
+  * builder/virtualbox/all: Attempt to use local guest additions ISO
+      before downloading from internet. [GH-1123]
+  * builder/vmware/all: Add `vmx_data_post` for modifying VMX data
+      after shutdown. [GH-1149]
+  * builder/vmware/vmx: Supports tools uploading. [GH-1154]
+
 BUG FIXES:
 
+  * core: `isotime` is the same time during the entire build. [GH-1153]
   * builder/parallels: Do not delete entire CDROM device. [GH-1115]
   * builder/virtualbox-ovf: Supports guest additions options. [GH-1120]
   * builder/vmware: Remote ESXi builder now uploads floppy. [GH-1106]
+  * post-processor/vsphere: Accept DOMAIN\account usernames [GH-1178]
 
 ## 0.6.0 (May 2, 2014)
 
