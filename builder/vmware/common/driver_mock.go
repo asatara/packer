@@ -15,7 +15,7 @@ type DriverMock struct {
 	CloneErr    error
 
 	CompactDiskCalled bool
-	CompactDiskPath   string
+	CompactDiskPath   []string
 	CompactDiskErr    error
 
 	CreateDiskCalled bool
